@@ -31,7 +31,7 @@ v_billing_type_names(i) := v_billing_type_name;
 # Aggregate functions
 
 When you use a aggregate function always return a value. So, you do not need check no_data_found exception.
-Be careful! Check if your logic return the expected value.
+Be careful! Check if your logic return the expected value. In the below sample, nvl was added for get 1 for null values returned.
 ```sql
 select nvl(max(item_de_provisao), 0) + 1 into v_next_provision_item
 from HsPropostaFinanceiraParcelas 
