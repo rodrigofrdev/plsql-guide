@@ -12,6 +12,14 @@ select (-500 + 1000) - abs(-1000) from dual;
 # Arrays need to be extended
 
 ``` sql
+select valor into v_billing_type_names(i) -- Unextended arrays. This causes the error beyond the subscript.
+from HsPropostaFinanListaValores
+where chave = v_billing_types(i)
+  and tipo = 'TIPO_DE_FATURAMENTO'
+  and ativo = 'S';
+```
+
+``` sql
 select valor into v_billing_type_name
 from HsPropostaFinanListaValores
 where chave = v_billing_types(i)
